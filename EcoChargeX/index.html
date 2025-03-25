@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Power Bank Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for Efficiency Graph -->
+</head>
+<body>
+
+    <header>
+        <h1>Solar Power Bank</h1>
+        <p>Power Anywhere, Anytime – Harness the Sun!</p>
+        <button id="toggleMode">🌙 Toggle Dark Mode</button>
+    </header>
+
+    <!-- Solar Charging Estimator -->
+    <section id="calculator">
+        <h2>Solar Charging Estimator</h2>
+
+        <label>Sunlight Exposure (hours):</label>
+        <input type="number" id="sunHours" placeholder="Enter hours in sunlight" min="1">
+
+        <label>Sun Temperature (°C):</label>
+        <input type="number" id="sunTemp" placeholder="Enter temperature" min="0">
+
+        <label>Device Power Consumption (mAh/hour):</label>
+        <input type="number" id="deviceConsumption" placeholder="Enter mAh per hour" min="100">
+
+        <button onclick="calculateCharging()">Calculate</button>
+
+        <h3>Results:</h3>
+        <p id="result"></p>
+
+        <div id="batteryStatus">
+            <h3>Battery Status:</h3>
+            <div class="battery-bar"><div id="batteryFill"></div></div>
+        </div>
+
+        <h3>Efficiency Over Time:</h3>
+        <canvas id="efficiencyChart"></canvas> <!-- Graph for efficiency visualization -->
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
